@@ -4,28 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naddunuri Sanjay - Portfolio</title>
+    <meta name="description" content="Sanjay's portfolio showcasing skills in Python, Machine Learning, and Cloud.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #0f172a;
-            color: #ffffff;
-        }
-        .section-title {
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 10px;
-        }
-        .card {
-            transition: transform 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: #0f172a; color: #ffffff; }
+        .section-title { border-bottom: 2px solid #3b82f6; padding-bottom: 10px; }
+        .card { transition: transform 0.3s ease-in-out; }
+        .card:hover { transform: scale(1.05); }
         .skill-badge {
             background-color: #1e40af;
             color: white;
@@ -64,32 +53,24 @@
                 <li><a href="#projects" class="hover:text-blue-300 transition">Projects</a></li>
                 <li><a href="#skills" class="hover:text-blue-300 transition">Skills</a></li>
                 <li><a href="#certifications" class="hover:text-blue-300 transition">Certifications</a></li>
+                <li><a href="#contact" class="hover:text-blue-300 transition">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center pt-20">
-        <div class="container mx-auto px-4 flex items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <div class="w-1/3 mr-12">
-                <img 
-                    src="https://media.licdn.com/dms/image/v2/D4E03AQEAXPn8ZSItfA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712587991151?e=1748476800&v=beta&t=0pIBcU_96Knat4uit8utt3ZmsVnIBSuI4lLJO-LcepM" 
-                    alt="Naddunuri Sanjay Profile" 
-                    class="rounded-full border-4 border-blue-600 shadow-2xl"
-                />
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQEAXPn8ZSItfA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712587991151?e=1748476800&v=beta&t=0pIBcU_96Knat4uit8utt3ZmsVnIBSuI4lLJO-LcepM" alt="Profile photo of Naddunuri Sanjay" class="rounded-full border-4 border-blue-600 shadow-2xl" />
             </div>
             <div class="w-2/3">
                 <h1 id="name-text" class="text-5xl font-bold mb-4 text-white"></h1>
                 <p id="subtitle-text" class="text-2xl text-gray-300 mb-6"></p>
                 <div class="flex space-x-4">
-                    <a href="https://linkedin.com/in/naddunurisanjay" target="_blank" 
-                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/2303A51LA4" target="_blank" 
-                       class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition">
-                        GitHub
-                    </a>
+                    <a href="https://linkedin.com/in/naddunurisanjay" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">LinkedIn</a>
+                    <a href="https://github.com/2303A51LA4" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition">GitHub</a>
+                    <a href="/mnt/data/81e3d068-e493-4510-9dff-33f8105a4661.pdf" download class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition">Download Resume</a>
                 </div>
                 <div class="mt-6 text-gray-400">
                     <p>Contact: +91-8886938474</p>
@@ -98,148 +79,16 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-16 bg-blue-900 bg-opacity-20">
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-900 bg-opacity-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 section-title">Education</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="card bg-blue-900 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">B.Tech, Computer Science</h3>
-                    <p class="text-gray-300">SR University</p>
-                    <p class="text-gray-400">CGPA: 85 | Dec 2024</p>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Senior Secondary</h3>
-                    <p class="text-gray-300">Govt Polytechnic</p>
-                    <p class="text-gray-400">Percentage: 72 | June 2023</p>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Secondary</h3>
-                    <p class="text-gray-300">ZPHS High School</p>
-                    <p class="text-gray-400">Percentage: 10 | June 2020</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 section-title">Experience</h2>
-            <div class="space-y-6">
-                <div class="timeline-item bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold">Python Intern | Gustovalley Technovations</h3>
-                    <p class="text-gray-400 mb-4">May 2024 - June 2024 | Krishnagiri, India</p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Achieved 85 percent growth for AI using Machine Learning</li>
-                        <li>Developed and deployed machine learning models</li>
-                        <li>Implemented image classification and object detection models</li>
-                        <li>Applied NLP techniques for text data analysis</li>
-                    </ul>
-                </div>
-                <div class="timeline-item bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold">AWS Academy Virtual Internship | Eduskils</h3>
-                    <p class="text-gray-400 mb-4">July 2024 - September 2024 | Odisha, India</p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Applied AWS security best practices</li>
-                        <li>Designed scalable cloud infrastructures</li>
-                        <li>Developed serverless applications</li>
-                        <li>Implemented secure data storage solutions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-blue-900 bg-opacity-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 section-title">Projects</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="card bg-blue-900 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4">PyBook: Python Compiler</h3>
-                    <p class="text-gray-300 mb-4">Designed a Python compiler with advanced syntax parsing and error handling</p>
-                    <div class="flex flex-wrap">
-                        <span class="skill-badge">tkinter</span>
-                        <span class="skill-badge">os</span>
-                        <span class="skill-badge">re</span>
-                    </div>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4">Sign Language Detection</h3>
-                    <p class="text-gray-300 mb-4">Machine learning system using CNN for gesture classification</p>
-                    <div class="flex flex-wrap">
-                        <span class="skill-badge">TensorFlow</span>
-                        <span class="skill-badge">OpenCV</span>
-                        <span class="skill-badge">Keras</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 section-title">Skills</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-badge">C</span>
-                        <span class="skill-badge">C++</span>
-                        <span class="skill-badge">Java</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-4">Frameworks</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-badge">TensorFlow</span>
-                        <span class="skill-badge">PyTorch</span>
-                        <span class="skill-badge">OpenCV</span>
-                        <span class="skill-badge">NLTK</span>
-                    </div>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-4">Professional Skills</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-badge">Web Design</span>
-                        <span class="skill-badge">Data Analysis</span>
-                        <span class="skill-badge">Time Management</span>
-                        <span class="skill-badge">Teamwork</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-16 bg-blue-900 bg-opacity-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 section-title">Certifications</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold">Data Structures and Algorithms</h3>
-                    <p class="text-gray-400">University of California San Diego</p>
-                    <p class="text-gray-300">October 2024</p>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold">Theory of Computation</h3>
-                    <p class="text-gray-400">NPTEL</p>
-                    <p class="text-gray-300">September 2024</p>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold">Introduction to Operating Systems</h3>
-                    <p class="text-gray-400">Coursera</p>
-                    <p class="text-gray-300">April 2024</p>
-                </div>
-                <div class="card bg-blue-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold">Cloud Computing</h3>
-                    <p class="text-gray-400">IBM</p>
-                    <p class="text-gray-300">April 2024</p>
-                </div>
-            </div>
+            <h2 class="text-3xl font-bold mb-8 section-title">Contact Me</h2>
+            <form action="https://formspree.io/f/YOUR_ID" method="POST" class="bg-blue-900 p-6 rounded-lg max-w-xl mx-auto">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 mb-4 rounded text-black" />
+                <input type="email" name="_replyto" placeholder="Your Email" required class="w-full p-2 mb-4 rounded text-black" />
+                <textarea name="message" placeholder="Your Message" required class="w-full p-2 mb-4 rounded text-black"></textarea>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
+            </form>
         </div>
     </section>
 
@@ -251,10 +100,8 @@
     </footer>
 
     <script>
-        // GSAP Animations
         gsap.registerPlugin(TextPlugin);
 
-        // Typewriter effect for name and subtitle
         gsap.to("#name-text", {
             duration: 2,
             text: "Naddunuri Sanjay",
@@ -269,13 +116,10 @@
             delay: 2.5
         });
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
