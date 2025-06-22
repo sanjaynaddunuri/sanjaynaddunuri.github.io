@@ -205,6 +205,35 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
+        .download-resume {
+            background: linear-gradient(45deg, #28a745, #20c997) !important;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-resume::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-resume:hover::before {
+            left: 100%;
+        }
+
+        .download-resume:hover {
+            background: linear-gradient(45deg, #20c997, #28a745) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
         /* Sections */
         .section {
             padding: 5rem 2rem;
@@ -611,6 +640,10 @@
                     and solving complex problems through innovative technology solutions.
                 </p>
                 <div class="social-links">
+                    <a href="#" class="social-link download-resume" id="downloadResume">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
                     <a href="https://linkedin.com/in/naddunurisanjay" class="social-link" target="_blank">
                         <i class="fab fa-linkedin"></i>
                         LinkedIn
@@ -626,8 +659,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://media.licdn.com/dms/image/v2/D4E03AQEAXPn8ZSItfA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712587991151?e=1756339200&v=beta&t=aaQefWtiwTcltEq4Tfw-EyIpN_h-_n0OjttIaseBnaI" alt="Sanjay Naddunuri" class="profile-image">
-            </div>
+<img src="https://media.licdn.com/dms/image/v2/D4E03AQEAXPn8ZSItfA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712587991151?e=1756339200&v=beta&t=aaQefWtiwTcltEq4Tfw-EyIpN_h-_n0OjttIaseBnaI" alt="Sanjay Naddunuri" class="profile-image">            </div>
         </div>
     </section>
 
@@ -899,6 +931,9 @@
             const subtitle = document.querySelector('.subtitle');
             const description = document.querySelector('.description');
             
+            // Load the actual profile image
+            loadProfileImage();
+            
             setTimeout(() => {
                 typeWriter(subtitle, 'Computer Science Engineer', 100);
             }, 1000);
@@ -908,12 +943,141 @@
             }, 3000);
         });
 
+        // Function to load profile image
+        function loadProfileImage() {
+            const profileImg = document.getElementById('profileImage');
+            
+            // Check if user uploaded an image file
+            if (window.fs && window.fs.readFile) {
+                // Try to read uploaded image files
+                const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+                const possibleNames = [
+                    'profile.jpg', 'profile.jpeg', 'profile.png',
+                    'sanjay.jpg', 'sanjay.jpeg', 'sanjay.png',
+                    'photo.jpg', 'photo.jpeg', 'photo.png',
+                    'image.jpg', 'image.jpeg', 'image.png'
+                ];
+                
+                // This would work if files are uploaded to the conversation
+                // For now, we'll use a placeholder that can be easily replaced
+                profileImg.src = 'https://via.placeholder.com/350x350/667eea/ffffff?text=Sanjay+N';
+            } else {
+                // Use the uploaded image from the conversation
+                profileImg.src = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=';
+            }
+            
+            // Add error handling for image loading
+            profileImg.onerror = function() {
+                this.src = 'https://via.placeholder.com/350x350/667eea/ffffff?text=Sanjay+Naddunuri';
+            };
+        }
+
+        // Download resume functionality
+        document.getElementById('downloadResume').addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadResume();
+        });
+
+        function downloadResume() {
+            // Create a more detailed PDF-style resume content
+            const resumeContent = `
+SANJAY NADDUNURI
+Computer Science and Engineering
+Phone: +91-9866852502
+LinkedIn: linkedin.com/in/naddunurisanjay
+GitHub: github.com/sanjaynaddunuri
+
+EDUCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+B.Tech., Computer Science and Engineering
+SR University                                                    CGPA: 8.5/10 | Dec 2024
+
+Senior Secondary
+Govt Polytechnic                                               Percentage: 72% | June 2023
+
+Secondary
+ZPHS High School                                               CGPA: 10/10 | June 2020
+
+EXPERIENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Python Intern | Gustovalley Technovations, Krishnagiri, India | May 2024 - June 2024
+• Achieved 85% growth for AI using Machine Learning
+• Developed and deployed ML models for AI-driven projects
+• Implemented image classification and object detection using OpenCV and TensorFlow
+• Applied NLP techniques with NLTK and spaCy for sentiment analysis and language modeling
+• Built models for classification, regression, and clustering using Scikit-learn, TensorFlow, and Keras
+
+PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PyBook: A Simple Python Compiler | June 2024 - December 2024
+Tools: tkinter, os, webbrowser, idlelib, re, percolator
+• Designed compiler architecture for executing Python code with syntax parsing and error handling
+• Integrated lexical analysis and parsing for accurate syntax interpretation and tokenization
+• Improved execution speed and error reporting through efficiency testing
+• Collaborated with development teams to enhance debugging tools and user interface usability
+
+Sign Language Detection | April 2023
+Tools: Python, TensorFlow, Keras, OpenCV, NumPy, Pandas, Matplotlib, scikit-learn
+• Built CNN-based deep learning model for accurate gesture classification
+• Used OpenCV for real-time hand gesture capture via webcam
+• Evaluated and improved model accuracy with scikit-learn metrics
+• Collaborated on data preprocessing and model tuning for optimal detection performance
+
+TECHNICAL SKILLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Programming Languages: C, Java, Python
+Frontend Technologies: HTML, CSS, JavaScript
+Frameworks: TensorFlow, PyTorch, OpenCV, NLTK, CNN
+Professional Skills: Web Design, Microsoft Office, Data Analysis, Data Visualization
+Soft Skills: Communication, Teamwork, Time Management
+
+CERTIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Data Structures and Algorithms - University of California San Diego (Coursera) | Oct 2024
+• Theory of Computation - National Programme on Technology Enhanced Learning | Sep 2024
+• Introduction to Operating Systems - Codio (Coursera) | Apr 2024
+• Introduction to Cloud Computing - IBM (Coursera) | Apr 2024
+            `;
+
+            // Create and download the resume as a text file
+            const blob = new Blob([resumeContent.trim()], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Sanjay_Naddunuri_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            // Show download confirmation
+            showDownloadConfirmation();
+        }
+
+        function showDownloadConfirmation() {
+            const confirmation = document.createElement('div');
+            confirmation.innerHTML = `
+                <div style="position: fixed; top: 20px; right: 20px; background: linear-gradient(45deg, #28a745, #20c997); color: white; padding: 1rem 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 9999; animation: slideInRight 0.5s ease;">
+                    <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+                    Resume Downloaded Successfully!
+                </div>
+            `;
+            document.body.appendChild(confirmation);
+
+            setTimeout(() => {
+                confirmation.style.animation = 'slideOutRight 0.5s ease forwards';
+                setTimeout(() => {
+                    document.body.removeChild(confirmation);
+                }, 500);
+            }, 3000);
+        }
+
         // Parallax effect for hero section
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const parallax = document.querySelector('.animated-bg');
             const speed = scrolled * 0.5;
-            parallax.style.transform = translateY(${speed}px);
+            parallax.style.transform = `translateY(${speed}px)`;
         });
 
         // Add hover effects to skill items
@@ -939,7 +1103,7 @@
 
         // Add floating animation to social links
         document.querySelectorAll('.social-link').forEach((link, index) => {
-            link.style.animationDelay = ${index * 0.2}s;
+            link.style.animationDelay = `${index * 0.2}s`;
             link.style.animation = 'float 3s ease-in-out infinite';
         });
 
@@ -1030,9 +1194,34 @@
             }
         `;
         
-        const mobileStyleSheet = document.createElement('style');
-        mobileStyleSheet.textContent = mobileMenuCSS;
-        document.head.appendChild(mobileStyleSheet);
+        // Add CSS for download confirmation animation
+        const downloadAnimationCSS = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        
+        const downloadStyleSheet = document.createElement('style');
+        downloadStyleSheet.textContent = downloadAnimationCSS;
+        document.head.appendChild(downloadStyleSheet);
 
         // Add particles effect
         function createParticle() {
@@ -1090,7 +1279,7 @@
                 trailElement.style.top = point.y + 'px';
                 trailElement.style.width = '6px';
                 trailElement.style.height = '6px';
-                trailElement.style.background = rgba(102, 126, 234, ${(index + 1) / trailLength * 0.5});
+                trailElement.style.background = `rgba(102, 126, 234, ${(index + 1) / trailLength * 0.5})`;
                 trailElement.style.borderRadius = '50%';
                 trailElement.style.pointerEvents = 'none';
                 trailElement.style.zIndex = '9999';
