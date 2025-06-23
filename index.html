@@ -972,87 +972,10 @@
             };
         }
 
-        // Download resume functionality
-        document.getElementById('downloadResume').addEventListener('click', function(e) {
-            e.preventDefault();
-            downloadResume();
-        });
-
-        function downloadResume() {
-            // Create a more detailed PDF-style resume content
-            const resumeContent = `
-SANJAY NADDUNURI
-Computer Science and Engineering
-Phone: +91-9866852502
-LinkedIn: linkedin.com/in/naddunurisanjay
-GitHub: github.com/sanjaynaddunuri
-
-EDUCATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-B.Tech., Computer Science and Engineering
-SR University                                                    CGPA: 8.5/10 | Dec 2024
-
-Senior Secondary
-Govt Polytechnic                                               Percentage: 72% | June 2023
-
-Secondary
-ZPHS High School                                               CGPA: 10/10 | June 2020
-
-EXPERIENCE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Python Intern | Gustovalley Technovations, Krishnagiri, India | May 2024 - June 2024
-• Achieved 85% growth for AI using Machine Learning
-• Developed and deployed ML models for AI-driven projects
-• Implemented image classification and object detection using OpenCV and TensorFlow
-• Applied NLP techniques with NLTK and spaCy for sentiment analysis and language modeling
-• Built models for classification, regression, and clustering using Scikit-learn, TensorFlow, and Keras
-
-PROJECTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PyBook: A Simple Python Compiler | June 2024 - December 2024
-Tools: tkinter, os, webbrowser, idlelib, re, percolator
-• Designed compiler architecture for executing Python code with syntax parsing and error handling
-• Integrated lexical analysis and parsing for accurate syntax interpretation and tokenization
-• Improved execution speed and error reporting through efficiency testing
-• Collaborated with development teams to enhance debugging tools and user interface usability
-
-Sign Language Detection | April 2023
-Tools: Python, TensorFlow, Keras, OpenCV, NumPy, Pandas, Matplotlib, scikit-learn
-• Built CNN-based deep learning model for accurate gesture classification
-• Used OpenCV for real-time hand gesture capture via webcam
-• Evaluated and improved model accuracy with scikit-learn metrics
-• Collaborated on data preprocessing and model tuning for optimal detection performance
-
-TECHNICAL SKILLS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Programming Languages: C, Java, Python
-Frontend Technologies: HTML, CSS, JavaScript
-Frameworks: TensorFlow, PyTorch, OpenCV, NLTK, CNN
-Professional Skills: Web Design, Microsoft Office, Data Analysis, Data Visualization
-Soft Skills: Communication, Teamwork, Time Management
-
-CERTIFICATIONS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Data Structures and Algorithms - University of California San Diego (Coursera) | Oct 2024
-• Theory of Computation - National Programme on Technology Enhanced Learning | Sep 2024
-• Introduction to Operating Systems - Codio (Coursera) | Apr 2024
-• Introduction to Cloud Computing - IBM (Coursera) | Apr 2024
-            `;
-
-            // Create and download the resume as a text file
-            const blob = new Blob([resumeContent.trim()], { type: 'text/plain' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Sanjay_Naddunuri_Resume.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-
-            // Show download confirmation
-            showDownloadConfirmation();
-        }
+document.getElementById('downloadResume').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.open('resume.pdf', '_blank');
+});
 
         function showDownloadConfirmation() {
             const confirmation = document.createElement('div');
