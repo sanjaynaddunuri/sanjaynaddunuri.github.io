@@ -640,10 +640,10 @@
                     and solving complex problems through innovative technology solutions.
                 </p>
                 <div class="social-links">
-                    <a href="https://drive.google.com/file/d/17pwN0zzP0DVXJgf--3s785zZG9Ak2khA" class="social-link download-resume" id="downloadResume" download>
-        <i class="fas fa-download"></i>
-        Download Resume
-    </a>
+                    <a href="https://drive.google.com/uc?export=download&id=17pwN0zzP0DVXJgf--3s785zZG9Ak2khA" class="social-link download-resume">
+    <i class="fas fa-download"></i> Download Resume
+</a>
+
                     <a href="https://www.linkedin.com/in/sanjay-naddunuri/" class="social-link" target="_blank">
                         <i class="fab fa-linkedin"></i>
                         LinkedIn
@@ -971,23 +971,7 @@
                 this.src = 'https://via.placeholder.com/350x350/667eea/ffffff?text=Sanjay+Naddunuri';
             };
         }
-document.getElementById("downloadResume").addEventListener("click", function(e) {
-    e.preventDefault();
-    const directUrl = "https://drive.google.com/uc?export=download&id=17pwN0zzP0DVXJgf--3s785zZG9Ak2khA";
-    fetch(directUrl)
-        .then(res => res.blob())
-        .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "Sanjay-Resume.pdf";
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            window.URL.revokeObjectURL(url);
-        })
-        .catch(() => alert("Download failed"));
-});
+
 
         // Parallax effect for hero section
         window.addEventListener('scroll', function() {
