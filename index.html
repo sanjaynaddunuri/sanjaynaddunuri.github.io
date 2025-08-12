@@ -971,29 +971,23 @@
                 this.src = 'https://via.placeholder.com/350x350/667eea/ffffff?text=Sanjay+Naddunuri';
             };
         }
-document.getElementById('downloadResume').addEventListener('click', function(e) {
+document.getElementById("downloadResume").addEventListener("click", function(e) {
     e.preventDefault();
-    downloadResume();
+    const directUrl = "https://drive.google.com/uc?export=download&id=17pwN0zzP0DVXJgf--3s785zZG9Ak2khA";
+    fetch(directUrl)
+        .then(res => res.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Sanjay-Resume.pdf";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(() => alert("Download failed"));
 });
-
-
-        function showDownloadConfirmation() {
-            const confirmation = document.createElement('div');
-            confirmation.innerHTML = `
-                <div style="position: fixed; top: 20px; right: 20px; background: linear-gradient(45deg, #28a745, #20c997); color: white; padding: 1rem 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 9999; animation: slideInRight 0.5s ease;">
-                    <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
-                    Resume Downloaded Successfully!
-                </div>
-            `;
-            document.body.appendChild(confirmation);
-
-            setTimeout(() => {
-                confirmation.style.animation = 'slideOutRight 0.5s ease forwards';
-                setTimeout(() => {
-                    document.body.removeChild(confirmation);
-                }, 500);
-            }, 3000);
-        }
 
         // Parallax effect for hero section
         window.addEventListener('scroll', function() {
